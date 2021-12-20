@@ -22,3 +22,4 @@ function Lib.Init()
     end
     return Functions
 end
+return Lib
