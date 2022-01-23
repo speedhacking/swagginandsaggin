@@ -18,7 +18,7 @@ function Lib.Init()
 	end
     
     function Functions.Move(part, posX, posY, posZ)
-        serverEndpoint:InvokeServer("SyncMove",{{["Part"] = part,["CFrame"] = CFrame.new(posX, posY, posZ)}})
+        serverEndpoint:InvokeServer("SyncMove",{{["Part"] = part,["CFrame"] = CFrame.new(posX, posY, posZ, 1, 0, 0, 0, 1, 0, 0, 0, 1)}})
     end
     return Functions
 end
