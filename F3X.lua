@@ -18,7 +18,27 @@ function Lib.Init()
 	end
     
     function Functions.Move(part, posX, posY, posZ)
-        serverEndpoint:InvokeServer("SyncMove",{{["Part"] = part,["CFrame"] = CFrame.new(posX, posY, posZ)}})
+        serverEndpoint:InvokeServer("SyncMove", {{["Part"] = part, ["CFrame"] = CFrame.new(posX, posY, posZ)}})
+    end
+
+    function Functions.Color(part, r, g, b)
+        serverEndpoint:InvokeServer("SyncColor",{{["Part"] = part,["Color"] = Color3.fromRGB(r, g, b),["UnionColoring"] = true}})
+    end
+
+    function Functions.Decorate(part, type)
+        serverEndpoint:InvokeServer("CreateDecorations",{{["Part"] = part, ["DecorationType"] = type}})
+    end
+
+    function Functions.editDecorate(part, type, edit, val)
+        serverEndpoint:InvokeServer("SyncDecorate",{{["Part"] = part, ["DecorationType"] = type,[edit] = val}})
+    end
+
+    function Functions.Light(part, type)
+        serverEndpoint:InvokeServer("CreateLights",{{["Part"] = part, ["LightType"] = type}})
+    end
+
+    function Functions.editLight(part, type, edit, val)
+        serverEndpoint:InvokeServer("SyncLighting",{{["Part"] = part, ["LightType"] = type,[edit] = val}})
     end
     return Functions
 end
