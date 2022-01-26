@@ -21,8 +21,8 @@ function Lib.Init()
         serverEndpoint:InvokeServer("SyncMove", {{["Part"] = part, ["CFrame"] = pos}})
     end
 
-    function Functions.Color(part, r, g, b)
-        serverEndpoint:InvokeServer("SyncColor",{{["Part"] = part,["Color"] = Color3.fromRGB(r, g, b),["UnionColoring"] = true}})
+    function Functions.Color(part, color)
+        serverEndpoint:InvokeServer("SyncColor",{{["Part"] = part,["Color"] = color,["UnionColoring"] = true}})
     end
 
     function Functions.Decorate(part, type)
