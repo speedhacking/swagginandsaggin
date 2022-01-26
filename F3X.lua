@@ -1,4 +1,4 @@
--- not done lul
+print("Ronan#1571")
 
 local Lib = {}
 
@@ -17,8 +17,8 @@ function Lib.Init()
 		serverEndpoint:InvokeServer("Remove", {part})
 	end
     
-    function Functions.Move(part, posX, posY, posZ)
-        serverEndpoint:InvokeServer("SyncMove", {{["Part"] = part, ["CFrame"] = CFrame.new(posX, posY, posZ)}})
+    function Functions.Move(part, pos)
+        serverEndpoint:InvokeServer("SyncMove", {{["Part"] = part, ["CFrame"] = pos}})
     end
 
     function Functions.Color(part, r, g, b)
